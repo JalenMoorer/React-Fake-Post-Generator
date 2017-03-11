@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import Button from 'react-toolbox/lib/button/Button';
 import './App.css';
 
 class App extends Component {
@@ -11,6 +12,7 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <div className="App-wrapper">
+        <Button raised primary>Test</Button>
           <div className="App-preview"></div>
           <div className="App-content"></div>
         </div>
