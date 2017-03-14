@@ -7,6 +7,8 @@ import Sidebar from 'react-toolbox/lib/layout/Sidebar';
 import AppBar from 'react-toolbox/lib/app_bar/AppBar';
 import IconButton from 'react-toolbox/lib/button/IconButton';
 
+import Form from './components/Form'
+
 import './App.css';
 
 class App extends Component {
@@ -20,12 +22,11 @@ class App extends Component {
         <Layout>
             <Panel>
             <AppBar Title='React App' leftIcon='menu' fixed flat/>
-                <div style={{ position: 'fixed', flex: 1, overflowY: 'auto', padding: '1.8rem', top: '6.4rem' }}>
-                    <h1>Main Content</h1>
-                    <p>Main content goes here.</p>
-                </div>
+                <article style={{ position: 'fixed', top: '6.4rem', right: 0, left: 0, bottom: 0 }}>
+                  <Form />
+                </article>
             </Panel>
-            <Sidebar pinned={ this.state.sidebarPinned } width={12}>
+            <Sidebar pinned={ this.state.sidebarPinned } width={50}>
                 <div style={{ flex: 1 }}>
                     <p>Supplemental content goes here.</p>
                 </div>
