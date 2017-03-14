@@ -4,9 +4,9 @@ import {browserHistory} from 'react-router';
 
 import Routes from './routes';
 
-import './assets/react-toolbox/theme.css';
-import theme from './assets/react-toolbox/theme';
 import ThemeProvider from 'react-toolbox/lib/ThemeProvider';
+import theme from './assets/react-toolbox/theme';
+import './assets/react-toolbox/theme.css';
 import './index.css';
 
 ReactDOM.render(

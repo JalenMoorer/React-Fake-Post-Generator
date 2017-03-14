@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 
 import Input from 'react-toolbox/lib/input'
+import Button from 'react-toolbox/lib/button/Button';
+import IconButton from 'react-toolbox/lib/button/IconButton';
 
 class Form extends Component {
 
-	state = { 
-		name: '', 
-		phone: '', 
-		email: '', 
-		hint: ''
+	state = {
+		message: ''
 	};
 
 	handleChange = (name, value) => {
@@ -18,11 +17,13 @@ class Form extends Component {
 	render() {
 		return (
 	      <section>
-	        <Input type='text' label='Name' name='name' value={this.state.name} onChange={this.handleChange.bind(this, 'name')} maxLength={16 } />
-	        <Input type='text' label='Disabled field' disabled />
-	        <Input type='email' label='Email address'  value={this.state.email} onChange={this.handleChange.bind(this, 'email')} />
-	        <Input type='tel' label='Phone' name='phone' value={this.state.phone} onChange={this.handleChange.bind(this, 'phone')} />
-	        <Input type='text' value={this.state.hint} label='Required Field' hint='With Hint' required onChange={this.handleChange.bind(this, 'hint')} icon={<span>J</span>} />
+	      	<form>
+		        <Input type='text' label='Message' value={this.state.message} onChange={this.handleChange.bind(this, 'message')} multiline='true' maxLength={140} />
+		        <Button icon='add' label='Add Image' flat primary />
+		        <div style={{paddingTop: '2rem'}} >
+		        	<Button type='submit' label='Generate Tweet Image' raised primary />
+		        </div>
+	        </form>
 	      </section>
 		);
 	}

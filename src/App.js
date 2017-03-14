@@ -5,7 +5,7 @@ import Panel from 'react-toolbox/lib/layout/Panel';
 import Sidebar from 'react-toolbox/lib/layout/Sidebar';
 
 import AppBar from 'react-toolbox/lib/app_bar/AppBar';
-import IconButton from 'react-toolbox/lib/button/IconButton';
+
 
 import Form from './components/Form'
 
@@ -21,10 +21,10 @@ class App extends Component {
     return (
         <Layout>
             <Panel>
-            <AppBar Title='React App' leftIcon='menu' fixed flat/>
-                <article style={{ position: 'fixed', top: '6.4rem', right: 0, left: 0, bottom: 0 }}>
+            <AppBar title='React App' leftIcon='menu' fixed flat/>
+                <div style={{ padding: "6rem"}}>
                   <Form />
-                </article>
+                </div>
             </Panel>
             <Sidebar pinned={ this.state.sidebarPinned } width={50}>
                 <div style={{ flex: 1 }}>
