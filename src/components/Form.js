@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 
-import Input from 'react-toolbox/lib/input'
+import Input from 'react-toolbox/lib/input';
 import Button from 'react-toolbox/lib/button/Button';
-import IconButton from 'react-toolbox/lib/button/IconButton';
 
 class Form extends Component {
 

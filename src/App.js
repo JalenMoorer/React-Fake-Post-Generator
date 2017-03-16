@@ -7,28 +7,25 @@ import Sidebar from 'react-toolbox/lib/layout/Sidebar';
 import AppBar from 'react-toolbox/lib/app_bar/AppBar';
 
 
-import Form from './components/Form'
+import Form from './components/Form';
+import Preview from './components/Preview';
 
 import './App.css';
 
 class App extends Component {
    
-   state = {
-        sidebarPinned: true
-    };
-
   render() {
     return (
         <Layout>
-            <Panel>
+            <Panel scrollY='true'>
             <AppBar title='React App' leftIcon='menu' fixed flat/>
-                <div style={{ padding: "6rem"}}>
+                <div style={{flex: 1, overflowY: 'auto', padding: "6rem"}}>
                   <Form />
                 </div>
             </Panel>
-            <Sidebar pinned={ this.state.sidebarPinned } width={50}>
-                <div style={{ flex: 1 }}>
-                    <p>Supplemental content goes here.</p>
+            <Sidebar pinned='true' scrollY='true' width={66}>
+                <div style={{ flex:1, padding: "6rem"}}>
+                    <Preview />
                 </div>
             </Sidebar>
         </Layout>
