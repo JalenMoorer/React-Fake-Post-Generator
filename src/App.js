@@ -17,13 +17,13 @@ class App extends Component {
   render() {
     return (
         <Layout>
-            <Panel scrollY='true'>
+            <Panel>
             <AppBar title='React App' leftIcon='menu' fixed flat/>
                 <div style={{flex: 1, overflowY: 'auto', padding: "6rem"}}>
                   <Form />
                 </div>
             </Panel>
-            <Sidebar pinned='true' scrollY='true' width={66}>
+            <Sidebar pinned={true} width={66}>
                 <div style={{ flex:1, paddingTop: "6rem"}}>
                     <Preview />
                 </div>

@@ -5,11 +5,11 @@ body {
 }
 
 .tweet {
-	  padding: 20px;
+	  padding: 1.8rem;
     background-color: #fff;
     border: 1px solid #e1e8ed;
     border-width: 0 1px 1px;
-    border-radius: 0 0 4px 4px;
+    border-radius: 4px 4px 4px 4px;
     margin: 0px auto;
     width:75%;
 }
@@ -52,11 +52,14 @@ body {
 
 .tweet-message-container {
   clear:both;
-  width: 90%;
 }
 
 .tweet-message {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: large;
   padding-top:10px;
+}
+
+.tweet-image > img {
+  width:100%;
 }

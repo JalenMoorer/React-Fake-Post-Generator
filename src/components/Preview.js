@@ -30,6 +30,9 @@ class Preview extends Component {
 						<p className='tweet-message'>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id dolor et eros imperdiet commodo et vel enim. Phasellus augue ligula posuere.
 						</p>
+						<div className='tweet-image'>
+							<img src={process.env.PUBLIC_URL + '/images/react.png'} alt='' />
+						</div>
 					</div>
 				</div>
 			</div>
