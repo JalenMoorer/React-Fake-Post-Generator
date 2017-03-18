@@ -5,15 +5,22 @@ body {
 }
 
 .tweet {
-	padding-top: 14.4px;
+	  padding: 20px;
+    background-color: #fff;
     border: 1px solid #e1e8ed;
     border-width: 0 1px 1px;
     border-radius: 0 0 4px 4px;
+    margin: 0px auto;
+    width:75%;
+}
+
+.tweet-post {
+  clear:both;
 }
 
 .tweet-avatar {
   width:55px;
-  float: left;
+  float:left;
 }
 
 .tweet-avatar > img{
@@ -24,9 +31,8 @@ body {
 
 .tweet-names {
   padding-top: 9px;
-  width: 250px;
+  float: left;
 }
-
 
 .tweet-name {
 	color: #333333;
@@ -38,4 +44,19 @@ body {
 .tweet-username {
 	font-size: 13px;
 	color: #657786;
+}
+
+.tweet-follow{
+  float: right;
+}
+
+.tweet-message-container {
+  clear:both;
+  width: 90%;
+}
+
+.tweet-message {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: large;
+  padding-top:10px;
 }

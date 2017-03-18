@@ -24,7 +24,7 @@ class App extends Component {
                 </div>
             </Panel>
             <Sidebar pinned='true' scrollY='true' width={66}>
-                <div style={{ flex:1, padding: "6rem"}}>
+                <div style={{ flex:1, paddingTop: "6rem"}}>
                     <Preview />
                 </div>
             </Sidebar>
