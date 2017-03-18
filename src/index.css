@@ -5,13 +5,13 @@ body {
 }
 
 .tweet {
-	  padding: 1.8rem;
+	  padding: 1rem;
     background-color: #fff;
     border: 1px solid #e1e8ed;
     border-width: 0 1px 1px;
     border-radius: 4px 4px 4px 4px;
     margin: 0px auto;
-    width:75%;
+    width:95%;
 }
 
 .tweet-post {

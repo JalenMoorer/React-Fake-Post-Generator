@@ -8,7 +8,8 @@ class Form extends Component {
 	state = {
 		name: '',
 		handle: '',
-		message: ''
+		message: '',
+		image: ''
 	};
 
 	handleChange = (name, value) => {
@@ -17,12 +18,12 @@ class Form extends Component {
 
 	render() {
 		return (
-	      <section>
+	      <section style={{padding: "1.8rem"}} >
 	      	<form>
 	      		<Input type='text' label='Name' value={this.state.name} onChange={this.handleChange.bind(this, 'name')} maxLength={40} />
 	      		<Input type='text' label='Handle' value={this.state.handle} onChange={this.handleChange.bind(this, 'handle')} maxLength={15} />
 		        <Input type='text' label='Message' value={this.state.message} onChange={this.handleChange.bind(this, 'message')} multiline={true} maxLength={140} />
-		        <Button icon='add' label='Add Image' flat primary />
+		        <Input type='text' label='Add Image' value={this.state.image} onChange={this.handleChange.bind(this, 'image')} />
 		        <div style={{paddingTop: '2rem'}} >
 		        	<Button type='submit' label='Generate Tweet Image' raised primary />
 		        </div>
