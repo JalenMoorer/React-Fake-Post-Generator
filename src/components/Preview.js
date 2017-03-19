@@ -1,44 +1,54 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import '../index.css';
 
-class Preview extends Component {
+const Preview = (props) => {
 
-	state = {
-		message: ''
-	};
-
-	handleChange = (name, value) => {
-		this.setState({...this.state, [name]: value});
-	};
-
-	render() {
-		return (
-			<div className='tweet'>
-				<div className='tweet-post'>
-					<div className='tweet-avatar'>
-						<img src={process.env.PUBLIC_URL + '/images/default_avatar.png'} alt='' />
+	return (
+		<div className='tweet'>
+			<div className='tweet-post'>
+				<div className='tweet-avatar'>
+					<img 
+						src={process.env.PUBLIC_URL + '/images/default_avatar.png'} 
+						alt='' 
+					/>
+				</div>
+				<div className='tweet-follow'>
+					<img 
+						src={process.env.PUBLIC_URL + '/images/follow_no.png'} 
+						alt='' 
+					/>
+				</div>
+				<div className='tweet-names'>
+					<div className='tweet-name'>
+						{props.name}
 					</div>
-					<div className='tweet-follow'>
-						<img src={process.env.PUBLIC_URL + '/images/follow_no.png'} alt='' />
+					<div className='tweet-username'>
+						{'@' + props.handle}
 					</div>
-					<div className='tweet-names'>
-						<div className='tweet-name'>Sample Name</div>
-						<div className='tweet-username'>@sameHandle</div>
-					</div>
-					<div className='tweet-message-container'>
-						<p className='tweet-message'>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id dolor et eros imperdiet commodo et vel enim. Phasellus augue ligula posuere.
-						</p>
-						<div className='tweet-image'>
-							<img src={process.env.PUBLIC_URL + '/images/react.png'} alt='' />
-						</div>
+				</div>
+				<div className='tweet-message-container'>
+					<p className='tweet-message'>
+						{props.message}
+					</p>
+					<div className='tweet-image'>
+						<img 
+							src={props.image} 
+							alt='' 
+						/>
 					</div>
 				</div>
 			</div>
+		</div>
+	);
+}
 
-		);
-	}
+Preview.propTypes = {
+	name: React.PropTypes.string.isRequired,
+	handle: React.PropTypes.string.isRequired,
+	message: React.PropTypes.string.isRequired,
+	image: React.PropTypes.string.isRequired,
+	handleChange: React.PropTypes.func.isRequired
 }
 
 export default Preview;
