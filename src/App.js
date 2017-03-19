@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import domtoimage from 'dom-to-image';
+import FileSaver from 'file-saver';
 
 import Layout from 'react-toolbox/lib/layout/Layout';
 import Panel from 'react-toolbox/lib/layout/Panel';
@@ -25,12 +26,9 @@ class App extends Component {
 
     generateImage = () => {
 
-        domtoimage.toJpeg(document.getElementById('generatedTweet'), { quality: 0.95 })
-            .then(function (dataUrl) {
-                var link = document.createElement('a');
-                link.download = 'Generated-Tweet.jpeg';
-                link.href = dataUrl;
-                link.click();
+        domtoimage.toBlob(document.getElementById('generatedTweet'), { quality: 0.95 })
+            .then(function (blob) {
+                FileSaver.saveAs(blob, 'Generated-Tweet.png');
             });
     };
    
