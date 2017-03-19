@@ -6,7 +6,7 @@ const Form = (props) => {
 
 	return (
       <section style={{padding: "1.8rem"}} >
-      	<form>
+
       		<Input 
       			type='text' 
       			label='Name' 
@@ -36,9 +36,14 @@ const Form = (props) => {
 		        onChange={props.handleChange.bind(this, 'image')} 
 	        />
 	        <div style={{paddingTop: '2rem'}} >
-	        	<Button type='submit' label='Generate Tweet Image' raised primary />
+	        	<Button 
+	        		type='submit' 
+	        		label='Generate Tweet Image'
+	        		onClick={props.generateImage}
+	        		raised 
+	        		primary 
+	        	/>
 	        </div>
-        </form>
       </section>
 	);
 }
@@ -48,7 +53,8 @@ Form.propTypes = {
 	handle: React.PropTypes.string.isRequired,
 	message: React.PropTypes.string.isRequired,
 	image: React.PropTypes.string.isRequired,
-	handleChange: React.PropTypes.func.isRequired
+	handleChange: React.PropTypes.func.isRequired,
+	generateImage: React.PropTypes.func.isRequired
 }
 
 export default Form;

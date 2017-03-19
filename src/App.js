@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import domtoimage from 'dom-to-image';
 
 import Layout from 'react-toolbox/lib/layout/Layout';
 import Panel from 'react-toolbox/lib/layout/Panel';
@@ -21,6 +22,17 @@ class App extends Component {
     handleChange = (name, value) => {
         this.setState({...this.state, [name]: value});
     };
+
+    generateImage = () => {
+
+        domtoimage.toJpeg(document.getElementById('generatedTweet'), { quality: 0.95 })
+            .then(function (dataUrl) {
+                var link = document.createElement('a');
+                link.download = 'Generated-Tweet.jpeg';
+                link.href = dataUrl;
+                link.click();
+            });
+    };
    
   render() {
     return (
@@ -34,11 +46,12 @@ class App extends Component {
                         message={this.state.message}
                         image={this.state.image}
                         handleChange={this.handleChange}
+                        generateImage={this.generateImage}
                     />
                 </div>
             </Panel>
             <Sidebar width={12} pinned >
-                <div style={{ flex:1, paddingTop: "6rem"}}>
+                <div id='generatedTweet' style={{ flex:1, paddingTop: "6rem"}}>
                     <Preview 
                         name={this.state.name}
                         handle={this.state.handle}
