@@ -24,6 +24,19 @@ class App extends Component {
         this.setState({...this.state, [name]: value});
     };
 
+    handleImageChange = (e) => {
+        e.preventDefault();
+
+        let reader = new FileReader();
+        let file = e.target.files[0];
+
+        reader.onloadend = () => {
+          this.setState({ image: reader.result });
+        }
+
+        reader.readAsDataURL(file)
+    };
+
     generateImage = () => {
 
         domtoimage.toBlob(document.getElementById('generatedTweet'), { quality: 0.95 })
@@ -42,7 +55,7 @@ class App extends Component {
                         name={this.state.name}
                         handle={this.state.handle}
                         message={this.state.message}
-                        image={this.state.image}
+                        handleImageChange={this.handleImageChange}
                         handleChange={this.handleChange}
                         generateImage={this.generateImage}
                     />

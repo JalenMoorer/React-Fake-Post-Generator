@@ -32,6 +32,7 @@ const Preview = (props) => {
 					</p>
 					<div className='tweet-image'>
 						<img 
+							id='tweetImage'
 							src={props.image} 
 							alt='' 
 						/>
