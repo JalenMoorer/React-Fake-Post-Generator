@@ -10,7 +10,6 @@ import AppBar from 'react-toolbox/lib/app_bar/AppBar';
 import Form from './components/Form';
 import Preview from './components/Preview';
 
-
 class App extends Component {
 
     state = {
@@ -36,6 +35,17 @@ class App extends Component {
 
         reader.readAsDataURL(file)
     };
+
+    convertHashTag = () => {
+        const modifiedMessage = this.state.message.split(" ");
+        const regexp = /#[\w]+/g;
+
+        let element = modifiedMessage.map(string => 
+            string.match(regexp) ? <span className="tweet-hashTag" key={string}> {" " + string + " "} </span> : " " + string)
+
+        return element;
+    };
+
 
     generateImage = () => {
 
@@ -69,6 +79,7 @@ class App extends Component {
                         message={this.state.message}
                         image={this.state.image}
                         handleChange={this.handleChange}
+                        convertHashTag={this.convertHashTag}
                     />
                 </div>
             </Sidebar>

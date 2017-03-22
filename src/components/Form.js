@@ -29,7 +29,8 @@ const Form = (props) => {
 	        maxLength={140} 
 	    />
         <input
-        	type="file" 
+        	type="file"
+        	label='Upload Image' 
         	id="files" 
         	name="file"
         	onChange={props.handleImageChange.bind(this)}

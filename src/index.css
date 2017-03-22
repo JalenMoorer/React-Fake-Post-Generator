@@ -63,5 +63,8 @@ body {
 
 .tweet-image > img {
   width:100%;
+}
 
+.tweet-hashTag{
+  color: #0084B4;
 }

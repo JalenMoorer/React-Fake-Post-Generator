@@ -28,7 +28,7 @@ const Preview = (props) => {
 				</div>
 				<div className='tweet-message-container'>
 					<p className='tweet-message'>
-						{props.message}
+						{props.convertHashTag()}
 					</p>
 					<div className='tweet-image'>
 						<img 
@@ -48,7 +48,8 @@ Preview.propTypes = {
 	handle: React.PropTypes.string.isRequired,
 	message: React.PropTypes.string.isRequired,
 	image: React.PropTypes.string.isRequired,
-	handleChange: React.PropTypes.func.isRequired
+	handleChange: React.PropTypes.func.isRequired,
+	convertHashTag: React.PropTypes.func.isRequired
 }
 
 export default Preview;
